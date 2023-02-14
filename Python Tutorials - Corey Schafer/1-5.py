@@ -320,5 +320,9 @@ tuple_2 = tuple_1
 print(tuple_1)
 print(tuple_2)
 # tuple_1[0] = 'Art' - This is an error as this is immutable. Tuples cannot be changed.
+#We can't append and we can't remove in tuples. 
+#Tuples doesn't have that many methods as a list does. 
+
+
 
 
