@@ -6,6 +6,8 @@
 #This file contains the notes and the code for videos 1-5. 
 
 '''
+Video 1.
+
 Python is pre-installed in Mac. 
 python--version
 IDLE. python3 --version
@@ -32,6 +34,8 @@ print(x)
 #This is a single inline comment. 
 
 '''
+Video 2. 
+
 Python operates on Whitespace alone. Very clean language. 
 Variables are usually all lowercase and if it is multiple words we separate those with underscore. 
 Single quotes and double quotes are fine for string. 
@@ -105,6 +109,8 @@ print(help(str))  #Help needs to run on string class.
 print(help(str.lower()))
 
 '''
+Video 3. 
+
 type() function
 
 Arithmetic Operators - 
@@ -176,6 +182,8 @@ num_2 = int(num_2)
 print(num_1 + num_2) #Casting. 
 
 '''
+Video 4. 
+
 Tuples allow us to work with sequential data and Sets are unordered collection of values with no duplicates. 
 List - allows us to work with a list of values.  
 Insert takes two argument. First the index to insert the value, value itself. 
@@ -185,6 +193,7 @@ Sorted function doesn't sort the list in place. It returns a sorted version of t
 Tuples are the same as list just that tuples cannot be changed ever.
 This is called mutable and immutable. 
 Lists are mutable and tuples are not. They are immutable. 
+Sets are values that are unordered and have no duplicates. 
 '''
 courses = ['History', 'Math', 'Physics', 'CompSci']
 print(courses)
@@ -322,7 +331,96 @@ print(tuple_2)
 # tuple_1[0] = 'Art' - This is an error as this is immutable. Tuples cannot be changed.
 #We can't append and we can't remove in tuples. 
 #Tuples doesn't have that many methods as a list does. 
+#We can loop through tuples, we can access values, all sorts of things. 
+#Except for what mutates the list.
 
+cs_courses = {'History', 'Math', 'Physics', 'CompSci'}
+print(cs_courses) #These are not in the order that we add them. Order changes with each execution. 
+#Sets don't care about order. Used a lot to remove duplicate values. Because sets throw away duplicates. 
+#Used to test whether a value is part of a set. Called a membership test. 
+#Determine what values either share or don't share with other sets. 
+ 
+cs_courses = {'History', 'Math', 'Physics', 'CompSci', 'Math'}
+print(cs_courses) #Got rid of the extra 'Math'.
 
+cs_courses = {'History', 'Math', 'Physics', 'CompSci', 'Math'}
+print('Math' in cs_courses) #True. 
 
+cs_courses = {'History', 'Math', 'Physics', 'CompSci'}
+art_courses = {'History', 'Math', 'Art', 'Design'}
+print(cs_courses.intersection(art_courses)) #To print what the sets have in common. 
+print(cs_courses.difference(art_courses)) #What courses are in cs_courses but not art_courses. 
+print(cs_courses.union(art_courses)) #Combine both of these sets and all of the courses offered.
 
+#Empty list, tuples and sets.  
+empty_list = []
+empty_list = list()
+
+empty_tuple = ()
+empty_tuple = tuple()
+
+empty_set = set()
+#empty_set = {}  -> This is wrong. As this creates a dictionary. And not a set.
+#To create an empty set, we just use the built in set() class with no values. 
+
+'''
+Video 5. 
+
+Dictionary allows us to work with key-value pair. 
+They are also called hash maps or associative arrays. 
+Key-Value Pairs: Two linked values where the key is a unique identifier where we can find our data and the value is that data. 
+Think of it as a real dictionary. 
+get() method.
+'''  
+student = {'name': 'John', 'age': 25, 'courses': ['Math', 'CompSci']}
+print(student)
+
+student = {'name': 'John', 'age': 25, 'courses': ['Math', 'CompSci']}
+print(student['name'])
+
+student = {'name': 'John', 'age': 25, 'courses': ['Math', 'CompSci']}
+print(student['courses'])
+
+student = {'name': 'John', 'age': 25, 'courses': ['Math', 'CompSci']}
+print(student.get('name'))
+
+student = {'name': 'John', 'age': 25, 'courses': ['Math', 'CompSci']}
+print(student.get('phone')) #None. 
+
+student = {'name': 'John', 'age': 25, 'courses': ['Math', 'CompSci']}
+print(student.get('phone', 'Not found')) #For keys that don't exist it returns - Not found.
+
+student = {'name': 'John', 'age': 25, 'courses': ['Math', 'CompSci']}
+student['phone'] = '555-5555'
+print(student.get('phone', 'Not found')) #prints 555-5555
+
+student = {'name': 'John', 'age': 25, 'courses': ['Math', 'CompSci']}
+student['phone'] = '555-5555'
+student['name'] = 'Jane'
+print(student) #Name is updated. 
+
+student = {'name': 'John', 'age': 25, 'courses': ['Math', 'CompSci']}
+student.update({'name': 'Jane', 'age': 26, 'phone':'555-5555'})
+print(student)
+
+student = {'name': 'John', 'age': 25, 'courses': ['Math', 'CompSci']}
+del student['age']
+print(student)
+
+student = {'name': 'John', 'age': 25, 'courses': ['Math', 'CompSci']}
+age = student.pop('age')
+print(student)
+print(age)
+
+#Loop through keys in dictionary. 
+student = {'name': 'John', 'age': 25, 'courses': ['Math', 'CompSci']}
+print(len(student))
+print(student.keys())
+print(student.values())
+print(student.items()) #Keys and values. 
+
+student = {'name': 'John', 'age': 25, 'courses': ['Math', 'CompSci']}
+for key, value in student.items():
+    print(key, value)
+    
+#This is the end of the section. 
