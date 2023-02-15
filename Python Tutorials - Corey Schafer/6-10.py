@@ -6,6 +6,8 @@
 #This file contains the notes and the code for videos 6-10. 
 
 '''
+Video 6. 
+
 Boolean. 
 Object Identity : is
 When we are using Object Identity we are actually checking if objects have the actual ID.
@@ -181,7 +183,8 @@ else:
     print("Evaluated to False.") #False. 
     
 #Let's say ypu have a function or something that is supposed to return some values, it's needed to check if those values are actually there. 
-#Pass in these sequences into a conditional to check whether a string is empty or a dictionary is empty, and you don't have to call any specific method. 
+#Pass in these sequences into a conditional to check whether a string is empty or a dictionary is empty, and you don't have to call any ...
+#...specific method. 
 #You can just pass in the empty sequence or the empty dictionary and it will evaluate to True or False, if that is empty.
 #There are some User defined Classes that will evaluate to False. 
 
@@ -193,10 +196,13 @@ else:
 
 
 '''
+Video 7. 
+
 Two important keywords when working with loops -> break and continue. 
 Break ->break out of a loop. 
 Continue ->moves on to the next iteration of the loop. 
 Loop within a loop. 
+While loops will just keep going until a certain condition has been met or until we hit a break. 
 '''
 nums = [1,2,3,4,5]
 for num in nums:
@@ -219,4 +225,99 @@ for num in nums:
 nums = [1,2,3,4,5]
 for num in nums:
     for letter in 'abc':
-        print(num, letter)
+        print(num, letter) #Every combinations. 
+
+for i in range(10):
+    print(i)
+
+for i in range(1, 11):
+    print(i) #starts at 1 and goes up to but not 11. 
+
+x = 0
+while x <10:
+    print(x)
+    x +=1 #x from 0-9. 
+
+x = 0
+while x <10:
+    if x == 5:
+        break
+    print(x)
+    x +=1 #x from 0-4.
+
+#To get infinite loop just replace comparison with True. 
+x = True
+while x <10:
+    if x == 5:
+        break
+    print(x)
+    x +=1 #Break to stop the loop. 
+
+#If you get stuck in infinite loop press control+c to stop the loop. 
+
+x = True
+while x <10:
+    print(x)
+    x +=1 #Infinite Loop. 
+
+'''
+Video 8. 
+
+Functions are basically some instructions packaged together to perform a specific task.  
+def keyword -> definition.
+It is possible to write a function and have no code in it, but we can't leave it completely blank.
+To fill the function later, just type pass keyword.  
+Pass keyword is saying we don't want to do anything with this for now, but it won't throw any errors for leaving it blank. 
+We need to have the parenthesis when we run our function, in order to execute it. if we don't have those there, then it will be equal to...
+...the function itself.    
+Functions allow us to reuse our code without having to repeat ourselves. 
+"Keeping your code dry" -> Don't repeat yourself. 
+Return in function - Means that when we execute our function, its actually gonna be equal to our return value. 
+Think of the function as a machine which takes input and produces a result. When you execute a function think of it as a black box.
+You don't know how its doing what its doing, you're mainly concerned about the input and the return value. 
+
+The format() method formats the specified value(s) and insert them inside the string's placeholder.
+Your required positional arguments have to come before your key word arguments. If you try to give a function without those in order, its going to give an error.  
+'''
+def hello_func():
+    pass
+
+print(hello_func) #This is a function at a certain location in memory.
+print(hello_func()) #None. As we are not doing anything with the function yet and we did not add a return value. 
+
+def hello_func():
+    print("Hello Function!")
+hello_func() #Executed function.
+#hello_func() as many times as we want. 
+
+def hello_func():
+    return 'Hello Function!' #No result. Just a string we're not doing anything with. 
+
+def hello_func():
+    return 'Hello Function!'
+print(hello_func()) #Prints the statement.
+print(hello_func().upper())
+
+#Pass arguments in function - parameters.
+def hello_func(greeting):
+    return '{} Function!'.format(greeting)
+print(hello_func('Hi')) #Hi function. 
+
+#Python Scope. 
+
+def hello_func(greeting, name = 'You'):
+    return '{}, {}'.format(greeting, name)
+print(hello_func('Hi')) #Hi. As we passed in non value for name. 
+
+def hello_func(greeting, name = 'You'):
+    return '{}, {}'.format(greeting, name)
+print(hello_func('Hi', name = 'Corey')) #Hi, Corey
+
+def student_info(*args, **kwargs):
+    print(args)  #Allowing us to accept an arbitrary number of positional or keyword arguments.  
+    print(kwargs) #Convention. 
+student_info('Math', 'Art', name = 'John', age = 22)
+#args - tuple with positional arguments. 
+#kwargs - dictionary with all of our keyword values. 
+#Function call with arguments using a * or **. When its used in that context, it will actually unpack a sequence or a dictionary and...
+#...pass those values into the function individually.  
