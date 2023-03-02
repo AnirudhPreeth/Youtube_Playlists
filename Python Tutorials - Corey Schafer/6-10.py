@@ -330,7 +330,7 @@ info = {'name': 'John', 'age': 22}
 student_info('Math', 'Art', name = 'John', age = 22) 
 student_info(*courses, **info)
 
-#Number of days per month. FIrst value placeholder for indexing purposes.
+#Number of days per month. First value placeholder for indexing purposes.
 month_days = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 def is_leap(year):
     '''Return true for leap years, false for non-leap years.'''
@@ -342,6 +342,7 @@ def days_in_month(year, month):
     if month ==2 and is_leap(year):
         return 29
     return month_days[month]
+
 
   
 
